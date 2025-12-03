@@ -1,4 +1,4 @@
-import { Outfit } from "next/font/google";
+import { Outfit, Poppins } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 // import StoreProvider from "@/app/StoreProvider.js";
 import StoreProvider from "./StoreProvider";
@@ -7,6 +7,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 
 
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["600", "700", "800"] });
 
 export const metadata = {
     title: "Dhakaiya Drip - Urban Fashion Platform",

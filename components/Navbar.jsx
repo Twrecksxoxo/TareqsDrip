@@ -24,7 +24,7 @@ const Navbar = () => {
             <div className="mx-6">
                 <div className="flex items-center justify-between max-w-7xl mx-auto py-4 transition-all">
 
-                    <Link href="/" className="relative text-4xl font-black hover:scale-110 transition-transform">
+                    <Link href="/" className="relative text-4xl font-black brand-hover">
                         <span className="brand-name">Dhakaiya Drip</span><span className="text-pink-500 animate-pulse">.</span>
                     </Link>
 
