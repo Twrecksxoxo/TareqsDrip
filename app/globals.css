@@ -6,8 +6,9 @@
     }
 
     body {
-        @apply bg-slate-950 text-slate-100;
-        background: linear-gradient(135deg, #0f172a 0%, #1a0d2e 50%, #0f172a 100%);
+        @apply bg-black text-slate-50;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #0d0208 50%, #1a0d2e 75%, #0a0a0a 100%);
+        background-size: 400% 400%;
     }
 
     button {
@@ -15,11 +16,17 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-        @apply text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-500;
+        @apply text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-pink-400 to-purple-500;
+        font-weight: 800;
+        letter-spacing: 0.05em;
     }
     
     :root {
         --brand-font: 'Poppins', 'Trebuchet MS', sans-serif;
+        --luxury-gold: #d4af37;
+        --luxury-black: #0a0a0a;
+        --futuristic-pink: #ff006e;
+        --futuristic-purple: #a855f7;
     }
 }
 
@@ -35,10 +42,10 @@
 
     @keyframes glow {
         0%, 100% {
-            box-shadow: 0 0 20px rgba(236, 72, 153, 0.5), 0 0 40px rgba(236, 72, 153, 0.3);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 0 0 40px rgba(255, 0, 110, 0.2);
         }
         50% {
-            box-shadow: 0 0 30px rgba(236, 72, 153, 0.8), 0 0 60px rgba(236, 72, 153, 0.5);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.6), 0 0 80px rgba(255, 0, 110, 0.4);
         }
     }
 
@@ -72,37 +79,41 @@
     }
 
     .tech-card {
-        @apply bg-slate-900 border border-pink-500/30 rounded-lg p-6;
-        @apply hover:border-pink-500/60 hover:shadow-xl;
-        @apply backdrop-blur-sm;
+        @apply bg-black/40 border border-amber-500/30 rounded-xl p-6;
+        @apply hover:border-amber-400/70 hover:shadow-2xl;
+        @apply backdrop-blur-md;
         transition: all 0.3s ease;
+        background: linear-gradient(135deg, rgba(10, 10, 10, 0.6) 0%, rgba(26, 13, 46, 0.5) 100%);
     }
 
     .tech-card:hover {
-        @apply transform -translate-y-1;
-        box-shadow: 0 0 30px rgba(236, 72, 153, 0.4);
+        @apply transform -translate-y-2;
+        box-shadow: 0 0 50px rgba(212, 175, 55, 0.3), 0 0 30px rgba(255, 0, 110, 0.2);
+        border-color: rgba(212, 175, 55, 0.6);
     }
 
     .tech-button {
-        @apply px-6 py-3 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600;
-        @apply text-white font-semibold rounded-lg;
-        @apply hover:from-pink-600 hover:via-purple-600 hover:to-indigo-700;
-        @apply transform hover:scale-105 active:scale-95;
-        @apply shadow-lg hover:shadow-pink-500/50;
+        @apply px-6 py-3 bg-gradient-to-r from-amber-500 via-pink-500 to-purple-600;
+        @apply text-white font-bold rounded-lg;
+        @apply hover:from-amber-600 hover:via-pink-600 hover:to-purple-700;
+        @apply transform hover:scale-110 active:scale-95;
+        @apply shadow-lg hover:shadow-amber-500/50;
         transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
     }
 
     .tech-input {
-        @apply bg-slate-800/50 border border-pink-500/30 rounded-lg px-4 py-2;
+        @apply bg-black/40 border border-amber-500/40 rounded-lg px-4 py-2;
         @apply text-slate-100 placeholder-slate-400;
-        @apply focus:border-pink-400 focus:outline-none;
-        @apply backdrop-blur-sm;
+        @apply focus:border-amber-400 focus:outline-none;
+        @apply backdrop-blur-md;
         transition: all 0.3s ease;
     }
 
     .tech-input:focus {
         @apply shadow-lg;
-        box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.4), 0 0 15px rgba(255, 0, 110, 0.2);
     }
 }
 

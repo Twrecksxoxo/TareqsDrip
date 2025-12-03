@@ -20,7 +20,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="relative bg-slate-950 border-b border-cyan-500/30 backdrop-blur-md sticky top-0 z-50">
+        <nav className="relative bg-black/60 border-b border-amber-500/20 backdrop-blur-xl sticky top-0 z-50 shadow-2xl shadow-amber-500/10">
             <div className="mx-6">
                 <div className="flex items-center justify-between max-w-7xl mx-auto py-4 transition-all">
 
@@ -30,20 +30,20 @@ const Navbar = () => {
 
                     {/* Desktop Menu */}
                     <div className="hidden sm:flex items-center gap-4 lg:gap-8 text-slate-300">
-                        <Link href="/" className="hover:text-pink-400 transition-colors font-medium">Collection</Link>
-                        <Link href="/shop" className="hover:text-pink-400 transition-colors font-medium">Shop</Link>
-                        <Link href="/" className="hover:text-pink-400 transition-colors font-medium">Lookbook</Link>
-                        <Link href="/" className="hover:text-pink-400 transition-colors font-medium">Contact</Link>
+                        <Link href="/" className="hover:text-amber-400 transition-colors font-medium tracking-wide">Collection</Link>
+                        <Link href="/shop" className="hover:text-amber-400 transition-colors font-medium tracking-wide">Shop</Link>
+                        <Link href="/" className="hover:text-amber-400 transition-colors font-medium tracking-wide">Lookbook</Link>
+                        <Link href="/" className="hover:text-amber-400 transition-colors font-medium tracking-wide">Contact</Link>
 
-                        <form onSubmit={handleSearch} className="hidden xl:flex items-center w-xs text-sm gap-2 tech-input bg-slate-800/50 px-4 py-2 rounded-full border border-cyan-500/30">
-                            <Search size={18} className="text-cyan-400" />
+                        <form onSubmit={handleSearch} className="hidden xl:flex items-center w-xs text-sm gap-2 tech-input bg-black/50 px-4 py-2 rounded-full border border-amber-500/40">
+                            <Search size={18} className="text-amber-400" />
                             <input className="w-full bg-transparent outline-none placeholder-slate-500 text-slate-100" type="text" placeholder="Search products" value={search} onChange={(e) => setSearch(e.target.value)} required />
                         </form>
 
-                        <Link href="/cart" className="relative flex items-center gap-2 text-slate-300 hover:text-cyan-400 transition-colors">
+                        <Link href="/cart" className="relative flex items-center gap-2 text-slate-300 hover:text-amber-400 transition-colors">
                             <ShoppingCart size={18} />
                             Cart
-                            <button className="absolute -top-1 left-3 text-[8px] text-white bg-cyan-500 size-3.5 rounded-full glow-effect">{cartCount}</button>
+                            <button className="absolute -top-1 left-3 text-[8px] text-white bg-amber-500 size-3.5 rounded-full glow-effect">{cartCount}</button>
                         </Link>
 
                     {
