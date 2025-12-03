@@ -20,37 +20,51 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="relative bg-white/80 border-b border-pink-200 backdrop-blur-md sticky top-0 z-50">
+        <nav className="relative bg-gradient-to-r from-white via-pink-50 to-rose-50 border-b border-pink-100 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
             <div className="mx-6">
-                <div className="flex items-center justify-between max-w-7xl mx-auto py-4 transition-all">
+                <div className="flex items-center justify-between max-w-7xl mx-auto py-5 transition-all">
 
-                    <Link href="/" className="relative text-3xl font-bold hover:scale-110 transition-transform">
-                        <span className="bg-gradient-to-r from-pink-500 via-rose-400 to-pink-600 bg-clip-text text-transparent">Dhakaiya Drip</span><span className="text-pink-400">.</span>
+                    <Link href="/" className="relative text-3xl font-bold hover:scale-105 transition-transform duration-300">
+                        <span className="bg-gradient-to-r from-pink-600 via-rose-500 to-pink-700 bg-clip-text text-transparent font-black tracking-tight">Dhakaiya Drip</span><span className="text-rose-400 animate-pulse">✨</span>
                     </Link>
 
                     {/* Desktop Menu */}
-                    <div className="hidden sm:flex items-center gap-4 lg:gap-8 text-slate-700">
-                        <Link href="/" className="hover:text-pink-600 transition-colors font-medium">Collection</Link>
-                        <Link href="/shop" className="hover:text-pink-600 transition-colors font-medium">Shop</Link>
-                        <Link href="/" className="hover:text-pink-600 transition-colors font-medium">Lookbook</Link>
-                        <Link href="/" className="hover:text-pink-600 transition-colors font-medium">Contact</Link>
+                    <div className="hidden sm:flex items-center gap-6 lg:gap-10 text-slate-700 font-medium">
+                        <Link href="/" className="relative group">
+                            <span>Collections</span>
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-500 to-rose-500 group-hover:w-full transition-all duration-300"></span>
+                        </Link>
+                        <Link href="/shop" className="relative group">
+                            <span>Shop</span>
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-500 to-rose-500 group-hover:w-full transition-all duration-300"></span>
+                        </Link>
+                        <Link href="/" className="relative group">
+                            <span>Lookbook</span>
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-500 to-rose-500 group-hover:w-full transition-all duration-300"></span>
+                        </Link>
+                        <Link href="/" className="relative group">
+                            <span>Contact</span>
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-500 to-rose-500 group-hover:w-full transition-all duration-300"></span>
+                        </Link>
 
-                        <form onSubmit={handleSearch} className="hidden xl:flex items-center w-xs text-sm gap-2 tech-input bg-white/70 px-4 py-2 rounded-full border border-pink-200">
-                            <Search size={18} className="text-pink-500" />
-                            <input className="w-full bg-transparent outline-none placeholder-slate-400 text-slate-800" type="text" placeholder="Search products" value={search} onChange={(e) => setSearch(e.target.value)} required />
+                        <form onSubmit={handleSearch} className="hidden xl:flex items-center text-sm gap-3 bg-white/80 px-5 py-2.5 rounded-full border border-pink-200 hover:border-pink-300 transition-all duration-300 shadow-sm hover:shadow-md">
+                            <Search size={16} className="text-pink-500" />
+                            <input className="w-full bg-transparent outline-none placeholder-slate-400 text-slate-800 text-sm" type="text" placeholder="Search fashion pieces" value={search} onChange={(e) => setSearch(e.target.value)} required />
                         </form>
 
-                        <Link href="/cart" className="relative flex items-center gap-2 text-slate-700 hover:text-pink-600 transition-colors">
-                            <ShoppingCart size={18} />
-                            Cart
-                            <button className="absolute -top-1 left-3 text-[8px] text-white bg-pink-500 size-3.5 rounded-full glow-effect">{cartCount}</button>
+                        <Link href="/cart" className="relative group flex items-center gap-2 text-slate-700 hover:text-rose-600 transition-colors duration-300">
+                            <div className="relative">
+                                <ShoppingCart size={20} className="group-hover:scale-110 transition-transform" />
+                                <button className="absolute -top-2 -right-2 text-[10px] font-bold text-white bg-gradient-to-r from-pink-500 to-rose-500 size-5 rounded-full flex items-center justify-center glow-effect">{cartCount}</button>
+                            </div>
+                            <span className="text-sm font-medium">Cart</span>
                         </Link>
 
                     {
                         !user ? (
                             <SignInButton mode="modal">
-                                <button className="tech-button">
-                                    Login
+                                <button className="tech-button text-sm px-6 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all">
+                                    Sign In
                                 </button>
                             </SignInButton>
 
@@ -66,24 +80,21 @@ const Navbar = () => {
                     </div>
 
                     {/* Mobile User Button  */}
-                    <div className="sm:hidden">
+                    <div className="sm:hidden flex items-center gap-3">
+                        <Link href="/cart" className="relative">
+                            <ShoppingCart size={20} className="text-slate-700 hover:text-rose-600 transition-colors" />
+                            <button className="absolute -top-2 -right-2 text-[8px] font-bold text-white bg-pink-500 size-4 rounded-full flex items-center justify-center">{cartCount}</button>
+                        </Link>
                         { user ? (
-                            <div>
                             <UserButton>
                                <UserButton.MenuItems>
-                                    <UserButton.Action labelIcon={<ShoppingCart size={16} />} label="Cart" onClick={() => router.push('/cart')} />
-                                </UserButton.MenuItems>
-                            </UserButton>
-                            <UserButton>
-                                <UserButton.MenuItems>
                                     <UserButton.Action labelIcon={<PackageIcon size={16} />} label="My Orders" onClick={() => router.push('/orders')} />
                                 </UserButton.MenuItems>
                             </UserButton>
-                            </div>
                         ):(
                             <SignInButton mode="modal">
-                                <button className="tech-button text-sm px-5 py-2">
-                                    Login
+                                <button className="tech-button text-sm px-4 py-2 rounded-lg font-semibold">
+                                    Sign In
                                 </button>
                             </SignInButton>
                         )
@@ -92,7 +103,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
+            <div className="h-px bg-gradient-to-r from-transparent via-pink-200/50 to-transparent" />
         </nav>
     )
 }
