@@ -7,8 +7,7 @@
 
     body {
         @apply bg-white text-slate-800;
-        background: linear-gradient(135deg, #ffffff 0%, #f5f1ed 25%, #faf8f6 50%, #f0ebe5 75%, #ffffff 100%);
-        background-size: 400% 400%;
+        background: linear-gradient(135deg, #fff5f8 0%, #ffe4f0 25%, #fff9fa 50%, #ffe8f3 75%, #fff5f8 100%);
     }
 
     button {
@@ -16,18 +15,7 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-        @apply text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-rose-500 to-amber-700;
-        font-weight: 800;
-        letter-spacing: 0.05em;
-    }
-    
-    :root {
-        --brand-font: 'Poppins', 'Trebuchet MS', sans-serif;
-        --luxury-gold: #d4a574;
-        --luxury-cream: #f5f1ed;
-        --luxury-beige: #e8ddd2;
-        --luxury-rose: #c97584;
-        --luxury-tan: #a68278;
+        @apply text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-400 to-pink-600;
     }
 }
 
@@ -43,10 +31,10 @@
 
     @keyframes glow {
         0%, 100% {
-            box-shadow: 0 0 20px rgba(212, 165, 116, 0.3), 0 0 40px rgba(201, 117, 132, 0.15);
+            box-shadow: 0 0 20px rgba(244, 114, 182, 0.4), 0 0 40px rgba(244, 114, 182, 0.2);
         }
         50% {
-            box-shadow: 0 0 40px rgba(212, 165, 116, 0.5), 0 0 80px rgba(201, 117, 132, 0.25);
+            box-shadow: 0 0 30px rgba(244, 114, 182, 0.6), 0 0 60px rgba(244, 114, 182, 0.3);
         }
     }
 
@@ -80,41 +68,38 @@
     }
 
     .tech-card {
-        @apply bg-white/70 border border-amber-200 rounded-2xl p-6;
-        @apply hover:border-amber-400 hover:shadow-2xl;
+        @apply bg-white/70 border border-pink-200 rounded-2xl p-6;
+        @apply hover:border-pink-400 hover:shadow-xl;
         @apply backdrop-blur-sm;
         transition: all 0.3s ease;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(245, 241, 237, 0.8) 100%);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 245, 248, 0.7) 100%);
     }
 
     .tech-card:hover {
-        @apply transform -translate-y-2;
-        box-shadow: 0 0 50px rgba(212, 165, 116, 0.25), 0 0 30px rgba(201, 117, 132, 0.15);
-        border-color: rgba(212, 165, 116, 0.7);
+        @apply transform -translate-y-1;
+        box-shadow: 0 0 30px rgba(244, 114, 182, 0.25);
     }
 
     .tech-button {
-        @apply px-6 py-3 bg-gradient-to-r from-amber-600 via-rose-500 to-amber-700;
-        @apply text-white font-bold rounded-lg;
-        @apply hover:from-amber-700 hover:via-rose-600 hover:to-amber-800;
-        @apply transform hover:scale-110 active:scale-95;
-        @apply shadow-lg hover:shadow-rose-400/40;
+        @apply px-6 py-3 bg-gradient-to-r from-pink-500 via-rose-400 to-pink-600;
+        @apply text-white font-semibold rounded-lg;
+        @apply hover:from-pink-600 hover:via-rose-500 hover:to-pink-700;
+        @apply transform hover:scale-105 active:scale-95;
+        @apply shadow-lg hover:shadow-pink-400/50;
         transition: all 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
     }
 
     .tech-input {
-        @apply bg-white/80 border border-amber-200 rounded-lg px-4 py-2;
+        @apply bg-white/70 border border-pink-200 rounded-lg px-4 py-2;
         @apply text-slate-800 placeholder-slate-400;
-        @apply focus:border-amber-500 focus:outline-none;
+        @apply focus:border-pink-400 focus:outline-none;
         @apply backdrop-blur-sm;
         transition: all 0.3s ease;
     }
 
     .tech-input:focus {
         @apply shadow-lg;
-        box-shadow: 0 0 30px rgba(212, 165, 116, 0.3), 0 0 15px rgba(201, 117, 132, 0.2);
+        box-shadow: 0 0 20px rgba(244, 114, 182, 0.3);
     }
 }
 
@@ -124,39 +109,4 @@
 
 .neon-text {
     text-shadow: 0 0 10px rgba(236, 72, 153, 0.8), 0 0 20px rgba(236, 72, 153, 0.5);
-}
-
-.brand-name {
-    @apply inline-block;
-    background: linear-gradient(90deg, #c97584 0%, #d4a574 25%, #e8b4a0 50%, #d4a574 75%, #c97584 100%);
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: shimmer 3s ease-in-out infinite;
-    font-family: 'Poppins', 'Trebuchet MS', sans-serif;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    font-weight: 800;
-    font-style: italic;
-}
-
-@keyframes shimmer {
-    0%, 100% {
-        background-position: 200% 0;
-        filter: drop-shadow(0 4px 15px rgba(201, 117, 132, 0.4));
-    }
-    50% {
-        background-position: -200% 0;
-        filter: drop-shadow(0 4px 20px rgba(212, 165, 116, 0.5));
-    }
-}
-
-.brand-hover {
-    @apply transition-all duration-300;
-}
-
-.brand-hover:hover {
-    filter: drop-shadow(0 8px 25px rgba(255, 0, 110, 0.8));
-    transform: scale(1.05);
 }

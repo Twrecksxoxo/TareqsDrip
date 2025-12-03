@@ -20,30 +20,30 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="relative bg-white/80 border-b border-amber-200 backdrop-blur-sm sticky top-0 z-50 shadow-md shadow-rose-200/20">
+        <nav className="relative bg-white/80 border-b border-pink-200 backdrop-blur-md sticky top-0 z-50">
             <div className="mx-6">
                 <div className="flex items-center justify-between max-w-7xl mx-auto py-4 transition-all">
 
-                    <Link href="/" className="relative text-4xl font-black brand-hover">
-                        <span className="brand-name">Dhakaiya Drip</span><span className="text-rose-500 animate-pulse">.</span>
+                    <Link href="/" className="relative text-3xl font-bold hover:scale-110 transition-transform">
+                        <span className="bg-gradient-to-r from-pink-500 via-rose-400 to-pink-600 bg-clip-text text-transparent">Dhakaiya Drip</span><span className="text-pink-400">.</span>
                     </Link>
 
                     {/* Desktop Menu */}
                     <div className="hidden sm:flex items-center gap-4 lg:gap-8 text-slate-700">
-                        <Link href="/" className="hover:text-amber-600 transition-colors font-medium tracking-wide">Collection</Link>
-                        <Link href="/shop" className="hover:text-amber-600 transition-colors font-medium tracking-wide">Shop</Link>
-                        <Link href="/" className="hover:text-amber-600 transition-colors font-medium tracking-wide">Lookbook</Link>
-                        <Link href="/" className="hover:text-amber-600 transition-colors font-medium tracking-wide">Contact</Link>
+                        <Link href="/" className="hover:text-pink-600 transition-colors font-medium">Collection</Link>
+                        <Link href="/shop" className="hover:text-pink-600 transition-colors font-medium">Shop</Link>
+                        <Link href="/" className="hover:text-pink-600 transition-colors font-medium">Lookbook</Link>
+                        <Link href="/" className="hover:text-pink-600 transition-colors font-medium">Contact</Link>
 
-                        <form onSubmit={handleSearch} className="hidden xl:flex items-center w-xs text-sm gap-2 tech-input bg-white/70 px-4 py-2 rounded-full border border-amber-200">
-                            <Search size={18} className="text-amber-600" />
+                        <form onSubmit={handleSearch} className="hidden xl:flex items-center w-xs text-sm gap-2 tech-input bg-white/70 px-4 py-2 rounded-full border border-pink-200">
+                            <Search size={18} className="text-pink-500" />
                             <input className="w-full bg-transparent outline-none placeholder-slate-400 text-slate-800" type="text" placeholder="Search products" value={search} onChange={(e) => setSearch(e.target.value)} required />
                         </form>
 
-                        <Link href="/cart" className="relative flex items-center gap-2 text-slate-700 hover:text-amber-600 transition-colors">
+                        <Link href="/cart" className="relative flex items-center gap-2 text-slate-700 hover:text-pink-600 transition-colors">
                             <ShoppingCart size={18} />
                             Cart
-                            <button className="absolute -top-1 left-3 text-[8px] text-white bg-amber-600 size-3.5 rounded-full glow-effect">{cartCount}</button>
+                            <button className="absolute -top-1 left-3 text-[8px] text-white bg-pink-500 size-3.5 rounded-full glow-effect">{cartCount}</button>
                         </Link>
 
                     {
