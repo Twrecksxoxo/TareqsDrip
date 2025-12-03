@@ -35,7 +35,7 @@ const Hero = () => {
                             <p className='text-3xl font-bold bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent max-w-40'>Trending Now</p>
                             <p className='flex items-center gap-1 mt-4 text-pink-700 hover:text-pink-600 transition-colors'>Explore <ArrowRightIcon className='group-hover:ml-2 transition-all' size={18} /> </p>
                         </div>
-                        <Image className='w-35 opacity-90 hover:opacity-100 transition-opacity' src={assets.hero_product_img1} alt="" />
+                        <Image className='w-48 opacity-90 hover:opacity-100 transition-opacity' src={assets.hero_product_img1} alt="" />
                     </div>
                     <div className='flex-1 flex items-center justify-between w-full bg-gradient-to-br from-rose-100 to-pink-100 rounded-3xl p-6 px-8 group border border-pink-200 hover:border-pink-400 transition-all hover:shadow-lg hover:shadow-pink-300/20'>
                         <div>
