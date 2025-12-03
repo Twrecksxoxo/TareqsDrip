@@ -9,8 +9,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export const metadata = {
-    title: "Tareqs Bazaar - Shop smarter",
-    description: "Tareqs Bazaar - Shop smarter",
+    title: "LUXE - Futuristic Fashion Platform",
+    description: "Discover cutting-edge fashion for the future. Premium styles and avant-garde collections.",
 };
 
 export default function RootLayout({ children }) {

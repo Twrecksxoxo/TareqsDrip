@@ -23,23 +23,23 @@ const RatingModal = ({ ratingModal, setRatingModal }) => {
 
     return (
         <div className='fixed inset-0 z-120 flex items-center justify-center bg-slate-950/80 backdrop-blur-md'>
-            <div className='bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl shadow-2xl shadow-cyan-500/20 w-96 relative border border-cyan-500/30'>
-                <button onClick={() => setRatingModal(null)} className='absolute top-3 right-3 text-cyan-400 hover:text-cyan-200 transition-colors'>
+            <div className='bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl shadow-2xl shadow-pink-500/20 w-96 relative border border-pink-500/30'>
+                <button onClick={() => setRatingModal(null)} className='absolute top-3 right-3 text-pink-400 hover:text-pink-200 transition-colors'>
                     <XIcon size={20} />
                 </button>
-                <h2 className='text-xl font-bold text-cyan-400 mb-4'>Rate Product</h2>
+                <h2 className='text-xl font-bold text-pink-400 mb-4'>Rate This Piece</h2>
                 <div className='flex items-center justify-center mb-6 gap-2'>
                     {Array.from({ length: 5 }, (_, i) => (
                         <Star
                             key={i}
-                            className={`size-8 cursor-pointer transition-all hover:scale-110 ${rating > i ? "text-cyan-400 fill-current drop-shadow-lg drop-shadow-cyan-400/50" : "text-slate-600 hover:text-slate-500"}`}
+                            className={`size-8 cursor-pointer transition-all hover:scale-110 ${rating > i ? "text-pink-400 fill-current drop-shadow-lg drop-shadow-pink-400/50" : "text-slate-600 hover:text-slate-500"}`}
                             onClick={() => setRating(i + 1)}
                         />
                     ))}
                 </div>
                 <textarea
-                    className='w-full p-3 bg-slate-700/50 border border-cyan-500/30 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent text-slate-100 placeholder-slate-400 transition-all'
-                    placeholder='Write your review (optional)'
+                    className='w-full p-3 bg-slate-700/50 border border-pink-500/30 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent text-slate-100 placeholder-slate-400 transition-all'
+                    placeholder='Share your thoughts (optional)'
                     rows='4'
                     value={review}
                     onChange={(e) => setReview(e.target.value)}

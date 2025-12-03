@@ -54,7 +54,7 @@ const Footer = () => {
                         <Link href="/" className="text-4xl font-bold neon-text">
                             Tareqs<span className="text-cyan-400"> Bazaar</span>
                         </Link>
-                        <p className="max-w-[410px] mt-6 text-sm text-slate-300 leading-relaxed">Welcome to Tareqs Bazaar, your ultimate destination for the latest and smartest gadgets. From smartphones and smartwatches to essential accessories, we bring you the best in innovation — all in one place.</p>
+                        <p className="max-w-[410px] mt-6 text-sm text-slate-300 leading-relaxed">Discover cutting-edge fashion for the future. LUXE brings you luxury, style, and innovation in every piece. From avant-garde collections to timeless essentials, redefine your wardrobe.</p>
                         <div className="flex items-center gap-3 mt-5">
                             {socialIcons.map((item, i) => (
                                 <Link href={item.link} key={i} className="flex items-center justify-center w-10 h-10 bg-slate-800 border border-cyan-500/30 hover:border-cyan-400/60 hover:bg-slate-700 hover:shadow-lg hover:shadow-cyan-500/20 transition rounded-full hover:scale-110">

@@ -24,16 +24,16 @@ const Navbar = () => {
             <div className="mx-6">
                 <div className="flex items-center justify-between max-w-7xl mx-auto py-4 transition-all">
 
-                    <Link href="/" className="relative text-3xl font-bold neon-text hover:scale-110 transition-transform">
-                        Tareqs Bazaar
+                    <Link href="/" className="relative text-3xl font-bold hover:scale-110 transition-transform">
+                        <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 bg-clip-text text-transparent">LUXE</span><span className="text-cyan-400">.</span>
                     </Link>
 
                     {/* Desktop Menu */}
                     <div className="hidden sm:flex items-center gap-4 lg:gap-8 text-slate-300">
-                        <Link href="/" className="hover:text-cyan-400 transition-colors">Home</Link>
-                        <Link href="/shop" className="hover:text-cyan-400 transition-colors">Shop</Link>
-                        <Link href="/" className="hover:text-cyan-400 transition-colors">About</Link>
-                        <Link href="/" className="hover:text-cyan-400 transition-colors">Contact</Link>
+                        <Link href="/" className="hover:text-pink-400 transition-colors font-medium">Collection</Link>
+                        <Link href="/shop" className="hover:text-pink-400 transition-colors font-medium">Shop</Link>
+                        <Link href="/" className="hover:text-pink-400 transition-colors font-medium">Lookbook</Link>
+                        <Link href="/" className="hover:text-pink-400 transition-colors font-medium">Contact</Link>
 
                         <form onSubmit={handleSearch} className="hidden xl:flex items-center w-xs text-sm gap-2 tech-input bg-slate-800/50 px-4 py-2 rounded-full border border-cyan-500/30">
                             <Search size={18} className="text-cyan-400" />
