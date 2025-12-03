@@ -27,13 +27,14 @@ const Hero = () => {
                         </div>
                         <button className='tech-button text-sm py-2.5 px-7 sm:py-5 sm:px-12 mt-4 sm:mt-10 rounded-md font-bold hover:scale-105 active:scale-95 transition-all'>LEARN MORE</button>
                     </div>
-                    <div className='hidden sm:block absolute bottom-0 right-0 md:right-10 h-96 w-80 rounded-2xl overflow-hidden'>
+                    <div className='hidden sm:flex absolute bottom-0 right-0 md:right-8 lg:right-0 h-full w-auto rounded-2xl overflow-hidden items-end justify-end'>
                         <Image 
-                            className='w-full h-full object-cover hover:scale-105 transition-transform duration-300' 
+                            className='h-full w-auto object-contain hover:scale-105 transition-transform duration-300' 
                             src={assets.hero_model_img} 
                             alt="Spring Collection"
-                            fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            height={500}
+                            width={400}
+                            priority
                         />
                     </div>
                 </div>
