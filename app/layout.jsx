@@ -9,8 +9,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export const metadata = {
-    title: "LUXE - Futuristic Fashion Platform",
-    description: "Discover cutting-edge fashion for the future. Premium styles and avant-garde collections.",
+    title: "Dhakaiya Drip - Urban Fashion Platform",
+    description: "Premium streetwear and contemporary fashion. Discover exclusive drops and trendy collections at Dhakaiya Drip.",
 };
 
 export default function RootLayout({ children }) {

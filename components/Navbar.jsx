@@ -24,8 +24,8 @@ const Navbar = () => {
             <div className="mx-6">
                 <div className="flex items-center justify-between max-w-7xl mx-auto py-4 transition-all">
 
-                    <Link href="/" className="relative text-3xl font-bold hover:scale-110 transition-transform">
-                        <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 bg-clip-text text-transparent">LUXE</span><span className="text-cyan-400">.</span>
+                    <Link href="/" className="relative text-4xl font-black hover:scale-110 transition-transform">
+                        <span className="brand-name">Dhakaiya Drip</span><span className="text-pink-500 animate-pulse">.</span>
                     </Link>
 
                     {/* Desktop Menu */}

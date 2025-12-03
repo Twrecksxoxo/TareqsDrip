@@ -54,7 +54,7 @@ const Footer = () => {
                         <Link href="/" className="text-4xl font-bold neon-text">
                             Tareqs<span className="text-cyan-400"> Bazaar</span>
                         </Link>
-                        <p className="max-w-[410px] mt-6 text-sm text-slate-300 leading-relaxed">Discover cutting-edge fashion for the future. LUXE brings you luxury, style, and innovation in every piece. From avant-garde collections to timeless essentials, redefine your wardrobe.</p>
+                        <p className="max-w-[410px] mt-6 text-sm text-slate-300 leading-relaxed">Discover the latest urban fashion trends at Dhakaiya Drip. Premium streetwear, contemporary styles, and exclusive drops. Elevate your wardrobe with our curated collection of fashion-forward pieces.</p>
                         <div className="flex items-center gap-3 mt-5">
                             {socialIcons.map((item, i) => (
                                 <Link href={item.link} key={i} className="flex items-center justify-center w-10 h-10 bg-slate-800 border border-cyan-500/30 hover:border-cyan-400/60 hover:bg-slate-700 hover:shadow-lg hover:shadow-cyan-500/20 transition rounded-full hover:scale-110">
@@ -80,7 +80,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <p className="py-4 text-sm text-slate-500 text-center">
-                    Copyright 2025 © <span className="text-cyan-400 font-semibold">Tareqs Bazaar</span> All Right Reserved.
+                    Copyright 2025 © <span className="brand-name text-sm">Dhakaiya Drip</span> All Right Reserved.
                 </p>
             </div>
         </footer>

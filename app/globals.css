@@ -109,3 +109,28 @@
 .neon-text {
     text-shadow: 0 0 10px rgba(236, 72, 153, 0.8), 0 0 20px rgba(236, 72, 153, 0.5);
 }
+
+.brand-name {
+    @apply inline-block;
+    background: linear-gradient(135deg, #ff006e 0%, #fb5607 25%, #ffbe0b 50%, #fb5607 75%, #ff006e 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: brandGlow 4s ease-in-out infinite, float 4s ease-in-out infinite;
+    font-family: 'Arial Black', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+@keyframes brandGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+        filter: drop-shadow(0 0 15px rgba(255, 0, 110, 0.6));
+    }
+    50% {
+        background-position: 100% 50%;
+        filter: drop-shadow(0 0 25px rgba(251, 86, 7, 0.8));
+    }
+}
