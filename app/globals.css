@@ -6,8 +6,8 @@
     }
 
     body {
-        @apply bg-black text-slate-50;
-        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #0d0208 50%, #1a0d2e 75%, #0a0a0a 100%);
+        @apply bg-white text-slate-800;
+        background: linear-gradient(135deg, #ffffff 0%, #f5f1ed 25%, #faf8f6 50%, #f0ebe5 75%, #ffffff 100%);
         background-size: 400% 400%;
     }
 
@@ -16,17 +16,18 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-        @apply text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-pink-400 to-purple-500;
+        @apply text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-rose-500 to-amber-700;
         font-weight: 800;
         letter-spacing: 0.05em;
     }
     
     :root {
         --brand-font: 'Poppins', 'Trebuchet MS', sans-serif;
-        --luxury-gold: #d4af37;
-        --luxury-black: #0a0a0a;
-        --futuristic-pink: #ff006e;
-        --futuristic-purple: #a855f7;
+        --luxury-gold: #d4a574;
+        --luxury-cream: #f5f1ed;
+        --luxury-beige: #e8ddd2;
+        --luxury-rose: #c97584;
+        --luxury-tan: #a68278;
     }
 }
 
@@ -42,10 +43,10 @@
 
     @keyframes glow {
         0%, 100% {
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 0 0 40px rgba(255, 0, 110, 0.2);
+            box-shadow: 0 0 20px rgba(212, 165, 116, 0.3), 0 0 40px rgba(201, 117, 132, 0.15);
         }
         50% {
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.6), 0 0 80px rgba(255, 0, 110, 0.4);
+            box-shadow: 0 0 40px rgba(212, 165, 116, 0.5), 0 0 80px rgba(201, 117, 132, 0.25);
         }
     }
 
@@ -79,41 +80,41 @@
     }
 
     .tech-card {
-        @apply bg-black/40 border border-amber-500/30 rounded-xl p-6;
-        @apply hover:border-amber-400/70 hover:shadow-2xl;
-        @apply backdrop-blur-md;
+        @apply bg-white/70 border border-amber-200 rounded-2xl p-6;
+        @apply hover:border-amber-400 hover:shadow-2xl;
+        @apply backdrop-blur-sm;
         transition: all 0.3s ease;
-        background: linear-gradient(135deg, rgba(10, 10, 10, 0.6) 0%, rgba(26, 13, 46, 0.5) 100%);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(245, 241, 237, 0.8) 100%);
     }
 
     .tech-card:hover {
         @apply transform -translate-y-2;
-        box-shadow: 0 0 50px rgba(212, 175, 55, 0.3), 0 0 30px rgba(255, 0, 110, 0.2);
-        border-color: rgba(212, 175, 55, 0.6);
+        box-shadow: 0 0 50px rgba(212, 165, 116, 0.25), 0 0 30px rgba(201, 117, 132, 0.15);
+        border-color: rgba(212, 165, 116, 0.7);
     }
 
     .tech-button {
-        @apply px-6 py-3 bg-gradient-to-r from-amber-500 via-pink-500 to-purple-600;
+        @apply px-6 py-3 bg-gradient-to-r from-amber-600 via-rose-500 to-amber-700;
         @apply text-white font-bold rounded-lg;
-        @apply hover:from-amber-600 hover:via-pink-600 hover:to-purple-700;
+        @apply hover:from-amber-700 hover:via-rose-600 hover:to-amber-800;
         @apply transform hover:scale-110 active:scale-95;
-        @apply shadow-lg hover:shadow-amber-500/50;
+        @apply shadow-lg hover:shadow-rose-400/40;
         transition: all 0.3s ease;
         text-transform: uppercase;
         letter-spacing: 0.1em;
     }
 
     .tech-input {
-        @apply bg-black/40 border border-amber-500/40 rounded-lg px-4 py-2;
-        @apply text-slate-100 placeholder-slate-400;
-        @apply focus:border-amber-400 focus:outline-none;
-        @apply backdrop-blur-md;
+        @apply bg-white/80 border border-amber-200 rounded-lg px-4 py-2;
+        @apply text-slate-800 placeholder-slate-400;
+        @apply focus:border-amber-500 focus:outline-none;
+        @apply backdrop-blur-sm;
         transition: all 0.3s ease;
     }
 
     .tech-input:focus {
         @apply shadow-lg;
-        box-shadow: 0 0 30px rgba(212, 175, 55, 0.4), 0 0 15px rgba(255, 0, 110, 0.2);
+        box-shadow: 0 0 30px rgba(212, 165, 116, 0.3), 0 0 15px rgba(201, 117, 132, 0.2);
     }
 }
 
@@ -127,7 +128,7 @@
 
 .brand-name {
     @apply inline-block;
-    background: linear-gradient(90deg, #ff006e 0%, #fb5607 25%, #ffbe0b 50%, #fb5607 75%, #ff006e 100%);
+    background: linear-gradient(90deg, #c97584 0%, #d4a574 25%, #e8b4a0 50%, #d4a574 75%, #c97584 100%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -143,11 +144,11 @@
 @keyframes shimmer {
     0%, 100% {
         background-position: 200% 0;
-        filter: drop-shadow(0 4px 15px rgba(255, 0, 110, 0.5));
+        filter: drop-shadow(0 4px 15px rgba(201, 117, 132, 0.4));
     }
     50% {
         background-position: -200% 0;
-        filter: drop-shadow(0 4px 20px rgba(251, 86, 7, 0.7));
+        filter: drop-shadow(0 4px 20px rgba(212, 165, 116, 0.5));
     }
 }
 

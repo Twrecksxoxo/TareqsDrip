@@ -47,17 +47,17 @@ const Footer = () => {
     ]
 
     return (
-        <footer className="mx-6 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-cyan-500/30">
+        <footer className="mx-6 bg-gradient-to-b from-slate-100 to-slate-200 border-t border-amber-200">
             <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-cyan-500/20 text-slate-400">
+                <div className="flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-amber-200 text-slate-700">
                     <div>
-                        <Link href="/" className="text-4xl font-bold neon-text">
-                            Tareqs<span className="text-cyan-400"> Bazaar</span>
+                        <Link href="/" className="text-4xl font-bold">
+                            <span className="brand-name">Dhakaiya Drip</span>
                         </Link>
-                        <p className="max-w-[410px] mt-6 text-sm text-slate-300 leading-relaxed">Discover the latest urban fashion trends at Dhakaiya Drip. Premium streetwear, contemporary styles, and exclusive drops. Elevate your wardrobe with our curated collection of fashion-forward pieces.</p>
+                        <p className="max-w-[410px] mt-6 text-sm text-slate-700 leading-relaxed">Discover the latest luxury fashion at Dhakaiya Drip. Premium curated pieces, contemporary elegance, and exclusive collections. Elevate your wardrobe with our refined selection of sophisticated fashion.</p>
                         <div className="flex items-center gap-3 mt-5">
                             {socialIcons.map((item, i) => (
-                                <Link href={item.link} key={i} className="flex items-center justify-center w-10 h-10 bg-black/50 border border-amber-500/40 hover:border-amber-400/70 hover:bg-black/70 hover:shadow-lg hover:shadow-amber-500/20 transition rounded-full hover:scale-110">
+                                <Link href={item.link} key={i} className="flex items-center justify-center w-10 h-10 bg-white/70 border border-amber-200 hover:border-amber-400 hover:bg-white hover:shadow-lg hover:shadow-rose-200/30 transition rounded-full hover:scale-110">
                                     <item.icon />
                                 </Link>
                             ))}
@@ -66,12 +66,12 @@ const Footer = () => {
                     <div className="flex flex-wrap justify-between w-full md:w-[45%] gap-5 text-sm">
                         {linkSections.map((section, index) => (
                             <div key={index}>
-                                <h3 className="font-bold text-amber-400 md:mb-5 mb-3 tracking-wide">{section.title}</h3>
+                                <h3 className="font-bold text-amber-700 md:mb-5 mb-3 tracking-wide">{section.title}</h3>
                                 <ul className="space-y-2.5">
                                     {section.links.map((link, i) => (
                                         <li key={i} className="flex items-center gap-2">
                                             {link.icon && <link.icon />}
-                                            <Link href={link.path} className="hover:text-amber-300 transition duration-200 text-slate-400">{link.text}</Link>
+                                            <Link href={link.path} className="hover:text-amber-700 transition duration-200 text-slate-700">{link.text}</Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -79,7 +79,7 @@ const Footer = () => {
                         ))}
                     </div>
                 </div>
-                <p className="py-4 text-sm text-slate-600 text-center">
+                <p className="py-4 text-sm text-slate-700 text-center">
                     Copyright 2025 © <span className="brand-name text-sm">Dhakaiya Drip</span> All Right Reserved.
                 </p>
             </div>
