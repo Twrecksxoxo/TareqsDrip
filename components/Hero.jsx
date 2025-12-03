@@ -29,10 +29,10 @@ const Hero = () => {
                     </div>
                     <div className='hidden sm:flex absolute bottom-0 -right-20 md:right-0 lg:right-10 h-full w-auto rounded-2xl overflow-hidden items-end justify-end'>
                         <Image 
-                            className='h-full w-auto object-contain hover:scale-105 transition-transform duration-300' 
+                            className='h-full w-auto object-cover object-top hover:scale-105 transition-transform duration-300' 
                             src={assets.hero_model_img} 
                             alt="Spring Collection"
-                            height={500}
+                            height={600}
                             width={400}
                             priority
                         />
