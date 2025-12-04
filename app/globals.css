@@ -7,7 +7,7 @@
 
     body {
         @apply bg-white text-slate-800;
-        background: linear-gradient(135deg, #fff5f8 0%, #ffe4f0 25%, #fff9fa 50%, #ffe8f3 75%, #fff5f8 100%);
+        background: linear-gradient(135deg, #f0f4ff 0%, #e8ecff 25%, #f5f0ff 50%, #eff0ff 75%, #f0f4ff 100%);
     }
 
     button {
@@ -15,7 +15,7 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-        @apply text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-400 to-pink-600;
+        @apply text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-500;
     }
 }
 
@@ -31,10 +31,10 @@
 
     @keyframes glow {
         0%, 100% {
-            box-shadow: 0 0 20px rgba(244, 114, 182, 0.4), 0 0 40px rgba(244, 114, 182, 0.2);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(139, 92, 246, 0.2);
         }
         50% {
-            box-shadow: 0 0 30px rgba(244, 114, 182, 0.6), 0 0 60px rgba(244, 114, 182, 0.3);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(139, 92, 246, 0.3);
         }
     }
 
@@ -68,38 +68,38 @@
     }
 
     .tech-card {
-        @apply bg-white/70 border border-pink-200 rounded-2xl p-6;
-        @apply hover:border-pink-400 hover:shadow-xl;
+        @apply bg-white/70 border border-blue-200 rounded-2xl p-6;
+        @apply hover:border-violet-400 hover:shadow-xl;
         @apply backdrop-blur-sm;
         transition: all 0.3s ease;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 245, 248, 0.7) 100%);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 244, 255, 0.7) 100%);
     }
 
     .tech-card:hover {
         @apply transform -translate-y-1;
-        box-shadow: 0 0 30px rgba(244, 114, 182, 0.25);
+        box-shadow: 0 0 30px rgba(139, 92, 246, 0.25);
     }
 
     .tech-button {
-        @apply px-6 py-3 bg-gradient-to-r from-pink-500 via-rose-400 to-pink-600;
+        @apply px-6 py-3 bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-500;
         @apply text-white font-semibold rounded-lg;
-        @apply hover:from-pink-600 hover:via-rose-500 hover:to-pink-700;
+        @apply hover:from-violet-700 hover:via-blue-600 hover:to-cyan-600;
         @apply transform hover:scale-105 active:scale-95;
-        @apply shadow-lg hover:shadow-pink-400/50;
+        @apply shadow-lg hover:shadow-violet-500/50;
         transition: all 0.3s ease;
     }
 
     .tech-input {
-        @apply bg-white/70 border border-pink-200 rounded-lg px-4 py-2;
+        @apply bg-white/70 border border-blue-200 rounded-lg px-4 py-2;
         @apply text-slate-800 placeholder-slate-400;
-        @apply focus:border-pink-400 focus:outline-none;
+        @apply focus:border-violet-400 focus:outline-none;
         @apply backdrop-blur-sm;
         transition: all 0.3s ease;
     }
 
     .tech-input:focus {
         @apply shadow-lg;
-        box-shadow: 0 0 20px rgba(244, 114, 182, 0.3);
+        box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
     }
 }
 
@@ -108,5 +108,5 @@
 }
 
 .neon-text {
-    text-shadow: 0 0 10px rgba(236, 72, 153, 0.8), 0 0 20px rgba(236, 72, 153, 0.5);
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(139, 92, 246, 0.5);
 }
