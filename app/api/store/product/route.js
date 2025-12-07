@@ -1,6 +1,9 @@
+import imagekit from "@/configs/imageKit"
+import prisma from "@/lib/prisma"
 import authSeller from "@/middleware/authSeller"
 import {getAuth} from "@clerk/nextjs/server"
 import { NextResponse } from "next/server"
+
 
 // Add a new product
 export async function POST(request){
@@ -64,6 +67,27 @@ export async function POST(request){
 
    } catch (error) {
     console.error(error);
+    return NextResponse.json({ error: error.code || error.message }, { status: 400 });
    }
 
+}
+
+
+// Get all products for a seller
+export async function GET(request){
+   try{
+      const { userId } = getAuth(request)
+      const storeId = await authSeller(userId)
+
+
+      if(!storeId){
+        return NextResponse.json({error:'not authorized'}, { status: 401 } )
+      }
+      const products = await prisma.product.findMany({ where: {storeId}})
+
+      return NextResponse.json({products})
+   } catch (error) {
+    console.error(error);
+    return NextResponse.json({ error: error.code || error.message }, { status: 400 })
+   }
 }
