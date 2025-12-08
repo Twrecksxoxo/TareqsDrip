@@ -5,7 +5,7 @@ import Image from "next/image"
 import toast from "react-hot-toast"
 import Loading from "@/components/Loading"
 import { useAuth, useUser } from "@clerk/nextjs"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 import axios from "axios"
 import { set } from "date-fns"
 
@@ -83,7 +83,7 @@ export default function CreateStore() {
 
 
             const {data} = await axios.post('/api/store/create', formData, {headers: {Authorization: `Bearer ${token}`}})
-            toast.success(data.messaage) 
+            toast.success(data.message) 
             await fetchSellerStatus()
         } catch (error) {
            toast.error(error?.response?.data?.error || error.message)

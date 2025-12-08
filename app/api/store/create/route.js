@@ -40,21 +40,27 @@ export async function POST(request){
             return NextResponse.json({error: "username already taken"}, {status: 400}) 
         }
         // image upload to imagekit
-        const buffer = Buffer.from(await image.arrayBuffer());
-        const response = await imagekit.upload({
-            file: buffer,
-            fileName: image.name,
-            folder: "logos"
-        })  
-        
-        const optimizedImage = imagekit.url({
-            path: response.filePath,
-            transformation: [
-                {quality: 'auto'},
-                {format: 'webp'},
-                {width: '512'}
-            ]
-        })
+        let optimizedImage = "";
+        try {
+            const buffer = Buffer.from(await image.arrayBuffer());
+            const response = await imagekit.upload({
+                file: buffer,
+                fileName: image.name,
+                folder: "logos"
+            })  
+            
+            optimizedImage = imagekit.url({
+                path: response.filePath,
+                transformation: [
+                    {quality: 'auto'},
+                    {format: 'webp'},
+                    {width: '512'}
+                ]
+            })
+        } catch(uploadError) {
+            console.error("ImageKit upload error:", uploadError);
+            return NextResponse.json({error: "Image upload failed: " + uploadError.message}, {status: 400})
+        }
 
         const newStore = await prisma.store.create({
             data: {
@@ -86,8 +92,8 @@ export async function POST(request){
 
         
     }catch(error){
-        console.error(error);
-        return NextResponse.json({error: error.code || error.message}, {status: 400})
+        console.error("Store creation error:", error);
+        return NextResponse.json({error: error.message || "Failed to create store"}, {status: 500})
 
     }
 }
