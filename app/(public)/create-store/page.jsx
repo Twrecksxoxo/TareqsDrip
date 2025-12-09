@@ -92,7 +92,7 @@ export default function CreateStore() {
 
     useEffect(() => {
         if(user){
-        fetchSellerStatus()
+           fetchSellerStatus()
         }
     }, [user])
 

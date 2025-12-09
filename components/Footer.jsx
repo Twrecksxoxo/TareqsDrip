@@ -52,9 +52,9 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-blue-200 text-slate-700">
                     <div>
                         <Link href="/" className="text-4xl font-bold">
-                            <span className="bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent">Dhakaiya Drip</span>
+                            <span className="bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent">Tareqs drip</span>
                         </Link>
-                        <p className="max-w-[410px] mt-6 text-sm text-slate-700 leading-relaxed">Discover cute and stylish fashion for the modern girl. Dhakaiya Drip brings you charm, elegance, and personality in every piece. From trendy collections to timeless essentials, redefine your wardrobe.</p>
+                        <p className="max-w-[410px] mt-6 text-sm text-slate-700 leading-relaxed">Discover cute and stylish fashion for the modern girl. Tareqs drip brings you charm, elegance, and personality in every piece. From trendy collections to timeless essentials, redefine your wardrobe.</p>
                         <div className="flex items-center gap-3 mt-5">
                             {socialIcons.map((item, i) => (
                                 <Link href={item.link} key={i} className="flex items-center justify-center w-10 h-10 bg-white/70 border border-blue-200 hover:border-violet-400 hover:bg-white hover:shadow-lg hover:shadow-violet-300/20 transition rounded-full hover:scale-110">
@@ -80,7 +80,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <p className="py-4 text-sm text-slate-700 text-center">
-                    Copyright 2025 © <span className="bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent font-semibold">Dhakaiya Drip</span> All Right Reserved.
+                    Copyright 2025 © <span className="bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent font-semibold">Tareqs drip</span> All Right Reserved.
                 </p>
             </div>
         </footer>

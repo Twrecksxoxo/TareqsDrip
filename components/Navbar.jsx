@@ -25,7 +25,7 @@ const Navbar = () => {
                 <div className="flex items-center justify-between max-w-7xl mx-auto py-5 transition-all">
 
                     <Link href="/" className="relative text-3xl font-bold hover:scale-105 transition-transform duration-300">
-                        <span className="bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent font-black tracking-tight">Dhakaiya Drip</span><span className="text-cyan-400 animate-pulse">✨</span>
+                        <span className="bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent font-black tracking-tight">Tareqs drip</span><span className="text-cyan-400 animate-pulse">✨</span>
                     </Link>
 
                     {/* Desktop Menu */}
