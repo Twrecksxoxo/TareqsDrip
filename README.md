@@ -1,6 +1,6 @@
 <div align="center">
   <h1><img src="https://gocartshop.in/favicon.ico" width="20" height="20" alt="GoCart Favicon">
-   GoCart</h1>
+   Tareq's Drip</h1>
   <p>
     An open-source multi-vendor e-commerce platform built with Next.js and Tailwind CSS.
   </p>
@@ -57,7 +57,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [https://gocart-main-vsuj.vercel.app/](https://gocart-main-vsuj.vercel.app/) with your browser to see the result.
 
 You can start editing the page by modifying `app/(public)/page.js`. The page auto-updates as you edit the file.
 
