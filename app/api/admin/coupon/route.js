@@ -1,9 +1,7 @@
-import { get } from "http";
 import { getAuth } from "@clerk/nextjs/server";
 import prisma from "@/lib/prisma";
 import authAdmin from "@/middleware/authAdmin";
 import { NextResponse } from "next/server";
-import { Inngest } from "inngest";
 import { inngest } from "@/inngest/client";
 
 
@@ -38,8 +36,8 @@ export async function POST(request) {
     }
 }
 
-//Delete coupon /api/coupon?id=couponId
-export async function Delete(request) {
+// Delete coupon /api/coupon?code=CODE
+export async function DELETE(request) {
     try{
         const {userId} = getAuth(request)
         const isAdmin = await authAdmin(userId)
