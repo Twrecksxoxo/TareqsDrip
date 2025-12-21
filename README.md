@@ -83,3 +83,38 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## 🔑 Environment Variables
+
+This app requires environment variables for auth, database, jobs, and media. Copy `.env.example` to `.env` locally and fill values. Do not commit `.env`.
+
+- NEXT_PUBLIC_CURRENCY_SYMBOL
+- ADMIN_EMAIL
+- NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY, CLERK_SECRET_KEY
+- DATABASE_URL, DIRECT_URL (Neon)
+- INNGEST_EVENT_KEY, INNGEST_SIGNING_KEY
+- IMAGEKIT_PUBLIC_KEY, IMAGEKIT_PRIVATE_KEY, IMAGEKIT_URL_ENDPOINT
+
+### Vercel Deployment
+
+Set variables in Vercel → Project → Settings → Environment Variables for `Production` (and `Preview` if needed). Or via CLI:
+
+```bash
+vercel env add NEXT_PUBLIC_CURRENCY_SYMBOL production
+vercel env add ADMIN_EMAIL production
+vercel env add NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY production
+vercel env add CLERK_SECRET_KEY production
+vercel env add DATABASE_URL production
+vercel env add DIRECT_URL production
+vercel env add INNGEST_EVENT_KEY production
+vercel env add INNGEST_SIGNING_KEY production
+vercel env add IMAGEKIT_PUBLIC_KEY production
+vercel env add IMAGEKIT_PRIVATE_KEY production
+vercel env add IMAGEKIT_URL_ENDPOINT production
+```
+
+After setting envs, Vercel will rebuild automatically. Locally, regenerate the Prisma client during build:
+
+```bash
+npm run build
+```
