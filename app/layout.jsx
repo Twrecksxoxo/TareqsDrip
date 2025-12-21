@@ -14,16 +14,24 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-    return (
-        <ClerkProvider>
-         <html lang="en">
+    const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+    const isValidKey = typeof publishableKey === 'string' && publishableKey.startsWith('pk_');
+
+    const appShell = (
+        <html lang="en">
             <body className={`${outfit.className} antialiased`}>
                 <StoreProvider>
                     <Toaster />
                     {children}
                 </StoreProvider>
             </body>
-         </html>
-        </ClerkProvider>
+        </html>
+    );
+
+    // Guard against invalid/missing Clerk key during build to avoid prerender errors.
+    return isValidKey ? (
+        <ClerkProvider publishableKey={publishableKey}>{appShell}</ClerkProvider>
+    ) : (
+        appShell
     );
 }
