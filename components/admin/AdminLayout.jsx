@@ -19,19 +19,25 @@ const AdminLayout = ({ children }) => {
 
     const fetchIsAdmin = async () => {
         try {
+            console.log('👤 User object:', user)
+            console.log('📧 User email:', user?.emailAddresses?.[0]?.emailAddress)
             const token = await getToken()
+            console.log('🎫 Token:', token ? 'Token received' : 'No token')
             const {data} = await axios.get('/api/admin/is-admin', {headers: {Authorization: `Bearer ${token}`}})
             setIsAdmin(data.isAdmin)
         } catch (error) {
-            console.log(error)
+            console.log('❌ Error fetching isAdmin:', error)
         }finally{
             setLoading(false)
         }
     }
 
     useEffect(() => {
+        console.log('🔄 User state changed:', user ? 'User exists' : 'No user')
         if(user){
             fetchIsAdmin()
+        } else {
+            setLoading(false)
         }       
     }, [user])
 
