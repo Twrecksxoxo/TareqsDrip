@@ -8,7 +8,7 @@ import { NextResponse } from "next/server"
 // Add a new product
 export async function POST(request){
    try{
-      const { userID } = getAuth(request)
+      const { userId } = getAuth(request)
       const storeId = await authSeller(userId)
 
 
