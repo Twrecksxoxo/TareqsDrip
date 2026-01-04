@@ -9,19 +9,18 @@ export async function GET(request) {
         
         console.log('🔑 Auth Check - userId:', userId)
         
+        if (!userId) {
+            return NextResponse.json({ isAdmin: false })
+        }
+
         const isAdmin = await authAdmin(userId)
         
         console.log('✅ isAdmin result:', isAdmin)
-        
-        if(!isAdmin){
-            return NextResponse.json({error:'not authorized'},{status:401})
-        }
 
-
-        return NextResponse.json({isAdmin})
+        // Always return isAdmin status, let the client handle the UI
+        return NextResponse.json({ isAdmin: isAdmin || false })
     } catch (error) {
         console.error('❌ Error in is-admin route:', error);
-        return NextResponse.json({ error: error.code|| error.message},{status:400})
-
+        return NextResponse.json({ isAdmin: false, error: error.message }, { status: 200 })
     }
 }

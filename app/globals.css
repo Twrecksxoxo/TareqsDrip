@@ -110,3 +110,13 @@
 .neon-text {
     text-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(139, 92, 246, 0.5);
 }
+
+/* Ensure Clerk modals/panels appear above sticky navbar */
+.cl-rootBox,
+.cl-modalBackdrop,
+.cl-modal,
+.cl-card,
+[data-clerk-portal],
+[class*="cl-"] {
+    z-index: 9999 !important;
+}

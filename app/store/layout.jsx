@@ -1,25 +1,35 @@
+'use client'
 import StoreLayout from "@/components/store/StoreLayout";
-import { SignedIn, SignedOut, SignIn } from "@clerk/nextjs";
+import { useAuth } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import Loading from "@/components/Loading";
 
-export const metadata = {
-    title: "Tareqs Bazaar - Store Dashboard",
-    description: "Tareqs Bazaar - Store Dashboard",
-};
+export default function RootStoreLayout({ children }) {
+    const { isLoaded, isSignedIn } = useAuth();
+    const router = useRouter();
+    const [isRedirecting, setIsRedirecting] = useState(false);
 
-export default function RootAdminLayout({ children }) {
+    useEffect(() => {
+        if (isLoaded && !isSignedIn && !isRedirecting) {
+            setIsRedirecting(true);
+            router.push('/sign-in?redirect_url=/store');
+        }
+    }, [isLoaded, isSignedIn, router, isRedirecting]);
+
+    // Show loading only while Clerk is loading
+    if (!isLoaded) {
+        return <Loading />;
+    }
+
+    // If not signed in and redirecting, show loading
+    if (!isSignedIn) {
+        return <Loading />;
+    }
 
     return (
-        <>
-        <SignedIn>
-            <StoreLayout>
-                {children}
-            </StoreLayout>
-        </SignedIn>
-        <SignedOut>
-            <div className="min-h-screen flex items-center justify-center">
-                <SignIn fallbackRedirectUrl="/store" routing="hash"/>
-            </div>
-        </SignedOut>
-        </>
+        <StoreLayout>
+            {children}
+        </StoreLayout>
     );
 }

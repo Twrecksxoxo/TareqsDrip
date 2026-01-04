@@ -51,8 +51,9 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-blue-200 text-slate-700">
                     <div>
-                        <Link href="/" className="text-4xl font-bold">
-                            <span className="bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent">Tareqs drip</span>
+                        <Link href="/" className="text-4xl font-bold inline-block hover:scale-105 transition-transform duration-500">
+                            <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-rose-500 bg-clip-text text-transparent font-semibold tracking-wider uppercase drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.15)]" style={{fontFamily: '"Didot", "Bodoni MT", "Playfair Display", Georgia, serif', letterSpacing: '0.12em'}}>Tareqs</span>
+                            <span className="bg-gradient-to-r from-amber-400 via-rose-400 to-fuchsia-400 bg-clip-text text-transparent font-light ml-2.5" style={{fontFamily: '"Didot", "Bodoni MT", "Playfair Display", Georgia, serif', letterSpacing: '0.08em'}}>Drip</span>
                         </Link>
                         <p className="max-w-[410px] mt-6 text-sm text-slate-700 leading-relaxed">Discover cute and stylish fashion for the modern girl. Tareqs drip brings you charm, elegance, and personality in every piece. From trendy collections to timeless essentials, redefine your wardrobe.</p>
                         <div className="flex items-center gap-3 mt-5">
@@ -80,7 +81,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <p className="py-4 text-sm text-slate-700 text-center">
-                    Copyright 2025 © <span className="bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent font-semibold">Tareqs drip</span> All Right Reserved.
+                    Copyright 2025 © <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-rose-500 bg-clip-text text-transparent font-semibold tracking-wider uppercase" style={{fontFamily: '"Didot", "Bodoni MT", "Playfair Display", Georgia, serif'}}>Tareqs</span> <span className="bg-gradient-to-r from-amber-400 via-rose-400 to-fuchsia-400 bg-clip-text text-transparent" style={{fontFamily: '"Didot", "Bodoni MT", "Playfair Display", Georgia, serif'}}>Drip</span> All Right Reserved.
                 </p>
             </div>
         </footer>

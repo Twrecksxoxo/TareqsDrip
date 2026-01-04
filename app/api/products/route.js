@@ -1,29 +1,46 @@
-import { create } from "domain";
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
+export const runtime = 'nodejs';
 
 export async function GET(request) {
     try {
-        let products = await prisma.product.findMany({
-            where: {inStock: true},
-            include: { 
+        const { searchParams } = new URL(request.url);
+        const storeId = searchParams.get('storeId');
+
+        // Base filter: only in-stock products
+        const whereClause = {
+            inStock: true,
+            ...(storeId
+                ? { storeId }
+                : {
+                      // Public listing: only show products from approved + active stores
+                      store: { isActive: true, status: 'approved' },
+                  }),
+        };
+
+        const products = await prisma.product.findMany({
+            where: whereClause,
+            include: {
                 rating: {
                     select: {
-                        createdAt: true, rating: true, review: true,
-                        user: {select: {name: true, image: true}}
-                    }
+                        createdAt: true,
+                        rating: true,
+                        review: true,
+                        user: { select: { name: true, image: true } },
+                    },
                 },
                 store: true,
             },
-            orderBy: {createdAt: 'desc'}
-        })
+            orderBy: { createdAt: 'desc' },
+        });
 
-        //remove products with store isActive false
-        products = products.filter(product => product.store.isActive)
-        return NextResponse.json({products})
+        return NextResponse.json({ products });
     } catch (error) {
-       console.log(error);
-       return NextResponse.json({error: 'An internal server error occurred'}, {status: 500})
+        console.error('Products API Error:', error);
+        return NextResponse.json(
+            { error: error?.message || 'An internal server error occurred' },
+            { status: 500 }
+        );
     }
 }
