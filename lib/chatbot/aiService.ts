@@ -149,7 +149,7 @@ export class AIService {
     let intent: 'search' | 'deal' | 'recommend' | 'budget' | 'greeting' | 'help' = 'search';
     let category: string | null = null;
     let productType: string | null = null;
-    let attributes: string[] = [];
+    const attributes: string[] = [];
     let minPrice: number | null = null;
     let maxPrice: number | null = null;
     let isSpecificSearch = false;

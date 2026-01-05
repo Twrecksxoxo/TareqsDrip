@@ -234,7 +234,7 @@ export default function LookbookPage() {
                             LOOKBOOK
                         </h1>
                         <p className="text-rose-400/60 tracking-[0.5em] text-[10px] uppercase mt-2">
-                            Tareq's Drip • 2026 Collection
+                            Tareq&apos;s Drip • 2026 Collection
                         </p>
                     </div>
                     <div className="flex items-center gap-6">
