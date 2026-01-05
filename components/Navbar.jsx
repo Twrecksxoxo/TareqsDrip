@@ -48,7 +48,7 @@ const Navbar = () => {
                             <span>Shop</span>
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-cyan-500 group-hover:w-full transition-all duration-300"></span>
                         </Link>
-                        <Link href="/" className="relative group">
+                        <Link href="/lookbook" className="relative group">
                             <span>Lookbook</span>
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-cyan-500 group-hover:w-full transition-all duration-300"></span>
                         </Link>
