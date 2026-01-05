@@ -120,8 +120,10 @@ export default function ChatUI() {
                       {m.products.slice(0, 8).map((p: Product) => (
                         <Link
                           key={p.id}
-                          href={p.storeUsername ? `/store/${p.storeUsername}/product/${p.id}` : '#'}
+                          href={`/product/${p.id}`}
+                          prefetch={true}
                           className="block"
+                          onClick={() => setOpen(false)}
                         >
                           <div className="p-3 bg-white border border-slate-200 rounded-xl hover:border-indigo-300 hover:shadow-md transition-all cursor-pointer group">
                             <div className="flex gap-3">
