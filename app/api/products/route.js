@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 export async function GET(request) {
     try {
@@ -24,18 +25,27 @@ export async function GET(request) {
             include: {
                 rating: {
                     select: {
-                        createdAt: true,
                         rating: true,
                         review: true,
                         user: { select: { name: true, image: true } },
                     },
                 },
-                store: true,
+                store: {
+                    select: {
+                        id: true,
+                        name: true,
+                        username: true,
+                    }
+                },
             },
             orderBy: { createdAt: 'desc' },
         });
 
-        return NextResponse.json({ products });
+        return NextResponse.json({ products }, {
+            headers: {
+                'Cache-Control': 'public, s-maxage=10, stale-while-revalidate=59',
+            }
+        });
     } catch (error) {
         console.error('Products API Error:', error);
         return NextResponse.json(

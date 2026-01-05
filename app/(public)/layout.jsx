@@ -2,79 +2,66 @@
 import Banner from "@/components/Banner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { useEffect, useCallback, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "@/lib/features/product/productSlice";
 import { fetchCart, uploadCart } from "@/lib/features/cart/cartSlice";
 import { fetchAddresses } from "@/lib/features/address/addressSlice";
-import { useUser,useAuth } from "@clerk/nextjs";
+import { useUser, useAuth } from "@clerk/nextjs";
 import { fetchUserRatings } from "@/lib/features/rating/ratingSlice";
-
-
-
 
 export default function PublicLayout({ children }) {
     
     const dispatch = useDispatch()
-    const {user} = useUser()
-    const {getToken} = useAuth()
-    
-    const {cartItems} = useSelector((state) => state.cart)
-    const { lastFetched } = useSelector((state) => state.product)
-    const retryCountRef = useRef(0)
-    const maxRetries = 3
+    const { user } = useUser()
+    const { getToken } = useAuth()
 
-    // Fetch products with retry logic
-    const fetchProductsWithRetry = useCallback(async () => {
-        try {
-            await dispatch(fetchProducts({})).unwrap()
-            retryCountRef.current = 0 // Reset on success
-        } catch (err) {
-            console.error('Products fetch failed:', err)
-            // Retry with exponential backoff
-            if (retryCountRef.current < maxRetries) {
-                retryCountRef.current++
-                const delay = Math.min(1000 * Math.pow(2, retryCountRef.current), 10000)
-                console.log(`Retrying product fetch in ${delay}ms (attempt ${retryCountRef.current}/${maxRetries})`)
-                setTimeout(() => {
-                    dispatch(fetchProducts({}))
-                }, delay)
-            }
+    const { cartItems } = useSelector((state) => state.cart)
+    const { list: products, loading, lastFetched } = useSelector((state) => state.product)
+    const hasFetchedRef = useRef(false)
+
+    // Fetch products immediately on mount - only once
+    useEffect(() => {
+        if (!hasFetchedRef.current) {
+            hasFetchedRef.current = true
+            dispatch(fetchProducts({}))
         }
     }, [dispatch])
 
-    // Initial fetch
+    // Background refresh - only if data is stale (older than 2 minutes)
     useEffect(() => {
-        fetchProductsWithRetry()
-    }, [fetchProductsWithRetry])
+        const twoMinutes = 2 * 60 * 1000
 
-    // Periodic refresh every 5 minutes if products are stale
-    useEffect(() => {
+        // If we have products and they're fresh, don't refetch
+        if (products.length > 0 && lastFetched && Date.now() - lastFetched < twoMinutes) {
+            return
+        }
+
+        // Set up periodic refresh every 2 minutes
         const refreshInterval = setInterval(() => {
-            const fiveMinutes = 5 * 60 * 1000
-            if (!lastFetched || Date.now() - lastFetched > fiveMinutes) {
+            if (!loading) {
                 dispatch(fetchProducts({}))
             }
-        }, 60000) // Check every minute
+        }, twoMinutes)
 
         return () => clearInterval(refreshInterval)
-    }, [dispatch, lastFetched])
+    }, [dispatch, products.length, lastFetched, loading])
 
+    // Fetch user-specific data when logged in
     useEffect(() => {
         if (user) {
             dispatch(fetchCart({ getToken }))
             dispatch(fetchAddresses({ getToken }))
             dispatch(fetchUserRatings({ getToken }))
         }
-    }, [user])
+    }, [user, dispatch, getToken])
 
+    // Upload cart when it changes
     useEffect(() => {
-        if (user) {
+        if (user && cartItems) {
             dispatch(uploadCart({ getToken }))
         }
-    }, [cartItems])
-
-
+    }, [cartItems, user, dispatch, getToken])
 
     return (
         <>
