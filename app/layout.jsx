@@ -25,8 +25,8 @@ export default function RootLayout({ children }) {
     const isValidKey = typeof publishableKey === 'string' && publishableKey.startsWith('pk_');
 
     const appShell = (
-        <html lang="en">
-            <body className={`${outfit.className} ${cormorant.variable} antialiased`}>
+        <html lang="en" suppressHydrationWarning>
+            <body className={`${outfit.className} ${cormorant.variable} antialiased`} suppressHydrationWarning>
                 <StoreProvider>
                     <Toaster />
                     <ChatClientWrapper />
