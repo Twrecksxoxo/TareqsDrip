@@ -16,7 +16,10 @@ const Navbar = () => {
 
     const handleSearch = (e) => {
         e.preventDefault()
-        router.push(`/shop?search=${search}`)
+        if (search.trim()) {
+            router.push(`/shop?search=${encodeURIComponent(search.trim())}`)
+            setSearch('')
+        }
     }
 
     return (
@@ -52,14 +55,17 @@ const Navbar = () => {
                             <span>Lookbook</span>
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-cyan-500 group-hover:w-full transition-all duration-300"></span>
                         </Link>
-                        <Link href="/" className="relative group">
+                        <Link href="/contact" className="relative group">
                             <span>Contact</span>
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-cyan-500 group-hover:w-full transition-all duration-300"></span>
                         </Link>
 
                         <form onSubmit={handleSearch} className="hidden xl:flex items-center text-sm gap-3 bg-white/80 px-5 py-2.5 rounded-full border border-blue-200 hover:border-violet-300 transition-all duration-300 shadow-sm hover:shadow-md">
                             <Search size={16} className="text-violet-600" />
-                            <input className="w-full bg-transparent outline-none placeholder-slate-400 text-slate-800 text-sm" type="text" placeholder="Search fashion pieces" value={search} onChange={(e) => setSearch(e.target.value)} required />
+                            <input className="w-full bg-transparent outline-none placeholder-slate-400 text-slate-800 text-sm" type="text" placeholder="Search fashion pieces" value={search} onChange={(e) => setSearch(e.target.value)} />
+                            <button type="submit" className="text-violet-600 hover:text-violet-800 transition-colors">
+                                <Search size={16} />
+                            </button>
                         </form>
 
                         <Link href="/cart" className="relative group flex items-center gap-2 text-slate-700 hover:text-violet-600 transition-colors duration-300">

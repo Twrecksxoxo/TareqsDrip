@@ -1,15 +1,22 @@
-import { Outfit } from "next/font/google";
+import { Outfit, Cormorant_Garamond } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 // import StoreProvider from "@/app/StoreProvider.js";
 import StoreProvider from "./StoreProvider";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import ChatClientWrapper from '@/components/Chatbot/ChatClientWrapper';
 
 
 const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600"] });
+const cormorant = Cormorant_Garamond({
+    subsets: ["latin"],
+    weight: ["400", "500", "600", "700"],
+    style: ["normal", "italic"],
+    variable: "--font-cormorant"
+});
 
 export const metadata = {
-    title: "LUXE - Futuristic Fashion Platform",
+    title: "Tareqs Drip$$$",
     description: "Discover cutting-edge fashion for the future. Premium styles and avant-garde collections.",
 };
 
@@ -19,9 +26,10 @@ export default function RootLayout({ children }) {
 
     const appShell = (
         <html lang="en">
-            <body className={`${outfit.className} antialiased`}>
+            <body className={`${outfit.className} ${cormorant.variable} antialiased`}>
                 <StoreProvider>
                     <Toaster />
+                    <ChatClientWrapper />
                     {children}
                 </StoreProvider>
             </body>
