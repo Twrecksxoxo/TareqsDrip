@@ -14,10 +14,10 @@ const Footer = () => {
         {
             title: "PRODUCTS",
             links: [
-                { text: "Earphones", path: '/', icon: null },
-                { text: "Headphones", path: '/', icon: null },
-                { text: "Smartphones", path: '/', icon: null },
-                { text: "Laptops", path: '/', icon: null },
+                { text: "Designer Bags", path: '/', icon: null },
+                { text: "Shoes", path: '/', icon: null },
+                { text: "Glasses", path: '/', icon: null },
+                { text: "Perfumes", path: '/', icon: null },
             ]
         },
         {
@@ -32,9 +32,9 @@ const Footer = () => {
         {
             title: "CONTACT",
             links: [
-                { text: "+1-212-456-7890", path: '/', icon: MailIcon },
-                { text: "contact@example.com", path: '/', icon: PhoneIcon },
-                { text: "794 Francisco, 94102", path: '/', icon: MapPinIcon }
+                { text: "+8801998576655", path: '/', icon: MailIcon },
+                { text: "tareq.sujat@g.bracu.ac.bd", path: '/', icon: PhoneIcon },
+                { text: "23/1 J.N shaha road Lalbagh Dhaka", path: '/', icon: MapPinIcon }
             ]
         }
     ];
