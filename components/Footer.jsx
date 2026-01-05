@@ -47,8 +47,8 @@ const Footer = () => {
     ]
 
     return (
-        <footer className="mx-6 bg-gradient-to-b from-blue-100 to-purple-100 border-t border-blue-200">
-            <div className="max-w-7xl mx-auto">
+        <footer className="w-full bg-gradient-to-b from-blue-100 to-purple-100 border-t border-blue-200">
+            <div className="max-w-7xl mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-blue-200 text-slate-700">
                     <div>
                         <Link href="/" className="text-4xl font-bold inline-block hover:scale-105 transition-transform duration-500">
